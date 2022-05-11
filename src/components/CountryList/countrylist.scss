@@ -1,0 +1,11 @@
+@import '../../styles/base';
+
+.country-list {
+  margin: 20px 150px 0px 150px;
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

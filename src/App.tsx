@@ -1,22 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Homepage from './Pages/Homepage'
-import SingleCountryPage from './Pages/SingleCountryPage'
+import Routes from './Routes'
+
+import { ThemeProvider } from '@material-ui/styles'
+import theme from './theme'
+
+import './styles/_base.scss'
 
 function App() {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Homepage}></Route>
-          <Route
-            exact
-            path="/:countryName"
-            component={SingleCountryPage}
-          ></Route>
-        </Switch>
-      </Router>
-    </>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Routes />
+      </div>
+    </ThemeProvider>
   )
 }
 

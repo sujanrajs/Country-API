@@ -1,0 +1,51 @@
+@import '../../styles/base';
+
+.sidebar {
+  background-color: white;
+
+  &__drawer {
+    .MuiDrawer-paperAnchorRight {
+      left: auto;
+      right: 0;
+      width: 300px;
+    }
+  }
+  &__drawer-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    svg.MuiSvgIcon-root {
+      font-size: 25px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  &__navigation {
+    ul {
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .blue {
+          background-color: blue;
+        }
+
+        .green {
+          background-color: greenyellow;
+        }
+
+        .red {
+          background-color: red;
+        }
+      }
+    }
+  }
+  &__color-box {
+    width: 60px;
+    height: 30px;
+    background-color: black;
+  }
+}

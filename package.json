@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -50,7 +52,8 @@
   "devDependencies": {
     "@types/react": "^16.9.35",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.7"
+    "lint-staged": "^10.0.7",
+    "sass": "^1.51.0"
   },
   "husky": {
     "hooks": {

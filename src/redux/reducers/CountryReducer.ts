@@ -1,26 +1,22 @@
 import {
-  AllActions,
-  Country,
-  FETCH_COUNTRIES,
-  FETCH_COUNTRIES_FAILURE,
+  CountryReducerState,
+  FETCH_COUNTRIES_LOADING,
   FETCH_COUNTRIES_SUCCESS,
+  FETCH_COUNTRIES_FAILURE,
 } from '../../types'
 
-type initStateReducer = {
-  countries: Country[]
-  isLoading: boolean
-  error: string
-}
-
-const initState: initStateReducer = {
+const initState: CountryReducerState = {
   countries: [],
   isLoading: false,
   error: '',
 }
 
-const countryReducer = (state = initState, action: AllActions) => {
+export default function countryReducer(
+  state: CountryReducerState = initState,
+  action: any
+) {
   switch (action.type) {
-  case FETCH_COUNTRIES:
+  case FETCH_COUNTRIES_LOADING:
     return {
       ...state,
       isLoading: true,
@@ -29,8 +25,8 @@ const countryReducer = (state = initState, action: AllActions) => {
   case FETCH_COUNTRIES_SUCCESS:
     return {
       ...state,
-      countries: action.payload,
       isLoading: false,
+      countries: action.payload,
       error: '',
     }
 
@@ -45,5 +41,3 @@ const countryReducer = (state = initState, action: AllActions) => {
     return state
   }
 }
-
-export default countryReducer
