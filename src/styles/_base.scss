@@ -1,43 +1,97 @@
-$primary: orange;
-$primaryHover: yellow;
-$black: black;
-$grey: rgb(170, 170, 170);
-$white: white;
-$blackLight: rgb(89, 89, 89);
+@import './reset';
 
-$max-width: 1040px;
-:root {
-  font-size: 10px;
-  font-weight: weight(regular);
-}
-
-$font-weights: (
-  'regular': 300,
-  'medium': 500,
-  'bold': 700,
-);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 @function weight($weight-name) {
   @return map-get($font-weights, $weight-name);
 }
 
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+$font-family: 'Montserrat', sans-serif;
+
+$max-width: 1040px;
+:root {
+  font-size: 8px;
+  font-weight: weight(regular);
+  font-family: $font-family;
+  --primary-color: #0037c1;
+  --primary-color-hover: #1f7aed;
+}
 .container {
   max-width: $max-width;
   margin: auto;
 }
 
-.MuiInputBase-input {
-  color: black !important;
-  font-size: large !important;
-}
+$primary: var(--primary-color);
+$primaryHover: var(--primary-color-hover);
+$black: #15181f;
 
-.icon-cursor {
-  cursor: pointer;
+$grey: #f6f7f9;
+$mainWhite: #ffffff;
+$white: #dbffff;
+$blackLight: #898b8e;
+$boxShadow: 0px 6px 16px rgba(0, 0, 0, 0.19);
+h1 {
+}
+h2 {
+  font-size: 3rem;
+  font-family: $font-family;
+  font-weight: weight(regular);
+}
+h3 {
+}
+p {
+  font-size: 2rem;
+  font-family: $font-family;
+  font-weight: weight(regular);
 }
 
 .btn {
-  border-radius: 5px;
+  font-size: 2rem !important;
+  font-weight: weight(medium) !important;
+  font-family: $font-family !important;
+  border-radius: 8px !important;
+  display: block !important;
+  text-align: center !important;
+  transition: all 0.2s;
+  width: 100%;
+
   &__primary {
-    background-color: aliceblue !important;
+    background-color: $primary !important;
+    color: $white !important;
+    &:hover {
+      background-color: $primaryHover !important;
+    }
   }
+  &__text {
+    color: $blackLight !important;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    display: inline;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.MuiInputBase-input {
+  font-family: $font-family !important;
+  color: $black !important;
+  font-size: 2rem !important;
+}
+
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+  background: #b8b9bb !important;
+}
+.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button {
+  font-family: $font-family !important;
 }

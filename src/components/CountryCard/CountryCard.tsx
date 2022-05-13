@@ -1,26 +1,55 @@
 import React from 'react'
-
 import Button from '@material-ui/core/Button'
+import { Link } from 'react-router-dom'
 
-import './cuntrycard.scss'
+import './countrycard.scss'
 
 type CountryCardProps = {
+  flag: string
+  name: string
   region: string
   population: number
-  name: string
-  flag: string
+  onClick: Function
+  disabled: boolean
 }
 
-const CountryCard = ({ flag, name, region, population }: CountryCardProps) => {
+const CountryCard = ({
+  flag,
+  name,
+  onClick,
+  population,
+  region,
+  disabled,
+}: CountryCardProps) => {
   return (
-    <div className="country-card">
+    <div className="country-card" key={name}>
       <div className="country-card__wrapper">
-        <img src={flag} alt="country flag" />
-        <h2 className="country-card__name">Country: {name}</h2>
-        <h2 className="country-card__region">Region: {region}</h2>
-        <h2 className="country-card__population">Population: {population}</h2>
+        <Link to={`/country/${name}`}>
+          <span className="country-card__details">
+            <span className="country-card_flag">
+              <img src={flag} alt={name} />
+            </span>
+            <span className="country-card__name">
+              <h2>{name}</h2>
+            </span>
+            <span className="country-card__region">
+              <h2>{region}</h2>
+            </span>
+            <span className="country-card__population">
+              <h2>{population}</h2>
+            </span>
+          </span>
+        </Link>
+
         <div className="country-card__action">
-          <Button className="btn__primary">Add to Cart</Button>
+          <Button
+            disabled={disabled}
+            className="btn btn__primary"
+            onClick={() => onClick()}
+          >
+            {' '}
+            Mark Star{' '}
+          </Button>
         </div>
       </div>
     </div>

@@ -1,51 +1,66 @@
 @import '../../styles/base';
 
 .sidebar {
-  background-color: white;
-
   &__drawer {
+    min-width: 250px;
     .MuiDrawer-paperAnchorRight {
       left: auto;
       right: 0;
-      width: 300px;
+      width: 250px;
     }
   }
   &__drawer-content {
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    padding-top: 2.5rem;
+    padding-right: 5rem;
     svg.MuiSvgIcon-root {
-      font-size: 25px;
-      color: black;
+      font-size: 5rem;
+      color: $black;
       cursor: pointer;
     }
   }
   &__navigation {
+    margin-top: 2.5rem;
+    padding-right: 1rem;
+    text-align: right;
     ul {
+      margin-top: 8rem;
       li {
-        margin-bottom: 10px;
+        margin-bottom: 5rem;
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: center;
+      }
 
-        .blue {
-          background-color: blue;
-        }
-
-        .green {
-          background-color: greenyellow;
-        }
-
-        .red {
-          background-color: red;
-        }
+      .blue {
+        background: linear-gradient(
+          0deg,
+          rgba(129, 129, 129, 1) 0%,
+          rgba(0, 41, 89, 1) 100%
+        );
+      }
+      .purple {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 43, 97, 1) 0%,
+          rgba(143, 0, 255, 1) 100%
+        );
+      }
+      .green {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 43, 97, 1) 0%,
+          rgba(43, 175, 0, 1) 100%
+        );
       }
     }
   }
   &__color-box {
-    width: 60px;
-    height: 30px;
-    background-color: black;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
   }
 }

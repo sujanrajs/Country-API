@@ -1,0 +1,17 @@
+@import '../../styles/base';
+
+.errorpage-wrapper {
+  margin-top: 100px;
+  display: flex;
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+    width: 1080;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: $boxShadow;
+  }
+}

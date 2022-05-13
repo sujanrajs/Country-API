@@ -1,11 +1,39 @@
 @import '../../styles/base';
 
 .country-list {
-  margin: 20px 150px 0px 150px;
+  margin: 5rem auto 0 auto;
+  max-width: 1080px;
   &__cards {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 20px;
+  }
+  &__sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    p {
+      margin-right: 1rem;
+      font-weight: weight(medium);
+    }
+    #sort-country-select {
+      color: $primary !important;
+      font-weight: weight(medium);
+    }
+    svg {
+      color: $primary;
+      font-weight: weight(medium);
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+    button.MuiButtonBase-root.MuiIconButton-root.Mui-disabled.Mui-disabled {
+      background: transparent !important;
+    }
+    .MuiTableCell-root {
+      border-bottom: none !important;
+    }
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 import Drawer from '@material-ui/core/Drawer'
-import CloseIcon from '@material-ui/icons/Close'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 import './sidebar.scss'
+import Button from '@material-ui/core/Button'
 
 interface SidebarProps {
   onClick: Function
@@ -15,6 +16,15 @@ const Sidebar = (props: SidebarProps) => {
   const onDrawerClose = () => {
     onClick(!drawerState)
   }
+
+  const switchPrimaryColor = (primary: string, primaryHover: string) => {
+    document.documentElement.style.setProperty('--primary-color', primary)
+    document.documentElement.style.setProperty(
+      '--primary-color-hover',
+      primaryHover
+    )
+  }
+
   return (
     <div className="sidebar">
       <Drawer
@@ -24,17 +34,34 @@ const Sidebar = (props: SidebarProps) => {
         className="sidebar__drawer"
       >
         <div className="sidebar__drawer-content">
-          <CloseIcon onClick={onDrawerClose} className="sidebar__close-menu" />
+          <ArrowForwardIosIcon
+            onClick={onDrawerClose}
+            className="sidebar__close-menu"
+          />
+
           <div className="sidebar__navigation">
-            <h2>Theme Selection</h2>
+            <h2>Color Selector</h2>
             <ul>
-              <li>
-                <h2>Blue</h2>
-                <span className="sidebar__color-box blue"></span>
-                <h2>Green</h2>
-                <span className="sidebar__color-box green"></span>
-                <h2>Red</h2>
-                <span className="sidebar__color-box red"></span>
+              <li className="cursor-pointer">
+                <Button
+                  onClick={() => switchPrimaryColor('#002959', '#3672b8')}
+                >
+                  <span className="sidebar__color-box blue"></span>
+                </Button>
+              </li>
+              <li className="cursor-pointer">
+                <Button
+                  onClick={() => switchPrimaryColor('#8f00ff', '#be6cff')}
+                >
+                  <span className="sidebar__color-box purple"></span>
+                </Button>
+              </li>
+              <li className="cursor-pointer">
+                <Button
+                  onClick={() => switchPrimaryColor('#2baf00', '#6cd44a')}
+                >
+                  <span className="sidebar__color-box green"></span>
+                </Button>
               </li>
             </ul>
           </div>

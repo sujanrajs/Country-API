@@ -1,0 +1,47 @@
+@import '../../styles/base';
+
+.country-card {
+  box-shadow: $boxShadow;
+  width: 1080px;
+  border-radius: 16px;
+
+  &__wrapper {
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  img {
+    width: 150px;
+    height: 90px;
+    border: 1px solid black;
+    border-radius: 6px;
+  }
+
+  &__details {
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__name {
+    color: $black;
+  }
+
+  &__region {
+    color: $blackLight;
+  }
+
+  &__population {
+    color: $blackLight;
+    margin-right: 20px;
+  }
+
+  &__action {
+    align-self: right;
+    width: 150px;
+  }
+}

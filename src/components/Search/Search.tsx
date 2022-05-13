@@ -1,16 +1,26 @@
 import React from 'react'
-
+import { useDispatch } from 'react-redux'
 import Input from '@material-ui/core/Input'
-import SearchIcon from '@material-ui/icons/Search'
+
+import { setSearchKeyword } from '../../redux/actions'
 
 import './search.scss'
 
 const Search = () => {
+  const dispatch = useDispatch()
+
+  const handleInputChange = (e: any) => {
+    dispatch(setSearchKeyword(e.target.value))
+  }
+
   return (
     <div className="search-box">
       <div className="search-box__wrapper">
-        <SearchIcon />
-        <Input placeholder="Search Country" disableUnderline={true} />
+        <Input
+          onChange={handleInputChange}
+          placeholder="Search by Country"
+          disableUnderline={true}
+        />
       </div>
     </div>
   )

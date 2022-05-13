@@ -2,10 +2,10 @@ import { Dispatch } from 'redux'
 import axios from 'axios'
 
 import {
-  FETCH_COUNTRIES_LOADING,
   FETCH_COUNTRIES_SUCCESS,
-  FETCH_COUNTRIES_FAILURE,
   CountryActions,
+  FETCH_COUNTRIES_FAILURE,
+  FETCH_COUNTRIES_LOADING,
 } from '../../types'
 
 export function fetchAllCountriesLoading(): CountryActions {
@@ -31,7 +31,6 @@ export function fetchAllCountriesFailure(error: string): CountryActions {
 export function fetchAllCountries() {
   return (dispatch: Dispatch) => {
     dispatch(fetchAllCountriesLoading())
-
     axios
       .get('https://restcountries.com/v2/all')
       .then((res) => {

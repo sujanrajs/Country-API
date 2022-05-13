@@ -1,5 +1,4 @@
 import { createTheme } from '@material-ui/core'
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,6 +17,10 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeightBold: 700,
+    fontWeightMedium: 600,
+    fontWeightRegular: 400,
     htmlFontSize: 8,
   },
 })

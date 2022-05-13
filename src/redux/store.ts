@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+
 import rootReducer from './reducers'
 
 const initState = {}
@@ -26,5 +27,6 @@ export default function makeStore(initialState = initState) {
       store.replaceReducer(nextReducer)
     })
   }
+
   return store
 }
