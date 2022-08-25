@@ -10,12 +10,5 @@ npm install
 ```
 npm start
 ```
-
-## Features
-* Redux
-* Redux-thunk
-* Redux-saga
-* React-router
-* Prettier
-* ESLint
-* Husky & lint-staged
+## This project is an assignment done with the help of teeacher during the training at Integrify
+## TypeScript | React | Redux | HTML | CSS | public Country RestAPI
